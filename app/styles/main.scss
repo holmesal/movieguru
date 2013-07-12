@@ -1,0 +1,120 @@
+@import "compass_twitter_bootstrap";
+
+$dark_glass: rgba(0,0,0,0.8);
+$less_dark_glass: rgba(20,20,30,0.8);
+
+@mixin center{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+@mixin searchArea{
+	background-color: $dark_glass !important;
+	font-weight: 100;
+	@include box-sizing(border-box);
+}
+
+bg-img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	@include transition(0.5s all);
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	// background-image: url(http://zapp.trakt.us/images/fanart_movies/1181.jpg);
+}
+
+movie-search{
+
+	.input-container{
+		@include center;
+	}
+
+	.thingsAreHappening{
+		position: absolute;
+		right: 15px;
+		top: 16px;
+		color: white;
+		font-size: 12pt;
+	}
+
+	input{
+
+		@include center;
+		@include searchArea;
+		border-radius: 0px !important;
+		border: none !important;
+		display: block !important;
+		margin-top: 50%;
+		color: white !important;
+		padding: 15px 15px !important;
+		font-size: 16pt !important;
+		line-height: 150% !important;
+		height: 50px !important;
+		width: 100%;
+		height: 100%;
+		&:focus{
+			border: none !important;
+			box-shadow: none !important;
+		}
+	}
+	::-webkit-input-placeholder {
+	   color: white !important;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: white !important;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: white !important;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: white !important;  
+	}
+
+	ul{
+		margin: 0;
+	}
+
+	li{
+		@include center;
+		@include searchArea;
+		list-style-type: none;
+		box-sizing: border-box;
+		padding-left: 15px;
+		padding-right: 15px;
+		font-size: 14pt;
+		line-height: 120%;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		color: white;
+		// @include transition(0.05s all);
+
+		.year{
+			float: right;
+			@include opacity(0.5);
+		}
+
+		&:hover{
+			cursor: pointer;
+			background-color: $less_dark_glass !important;
+		}
+	}
+}

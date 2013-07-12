@@ -1,0 +1,32 @@
+<bg-img></bg-img>
+
+<movie-search></movie-search>
+
+<recommendation current-rec="movies.currentRec" ng-show="showRecs"></recommendation>
+
+<div class="row" ng-show="showRecs">
+	<div class="span3">
+		<p class="lead">Favorites</p>
+		<ul>
+			<li ng-repeat="movie in movies.faves">{{movie.title}} - {{movie.year}}</li>
+		</ul>
+	</div>
+	<div class="span3">
+		<p class="lead">Blacklisted</p>
+		<ul>
+			<li ng-repeat="movie in movies.blacklist">{{movie.title}}</li>
+		</ul>
+	</div>
+	<div class="span3">
+		<p class="lead">Later</p>
+		<ul>
+			<li ng-repeat="movie in movies.later">{{movie.title}}</li>
+		</ul>
+	</div>
+	<div class="span3">
+		<p class="lead">Queue</p>
+		<ul>
+			<li ng-repeat="movie in movies.queue | orderBy:'rank':true">{{movie.title}} @ {{movie.rank}}</li>
+		</ul>
+	</div>
+</div>
