@@ -1,13 +1,10 @@
-<!-- <div class="hero-unit"> -->
 	<div class="input-container animated fadeInUp">
-		<input type="text" ng-model="movieQuery" placeholder="Start typing the name of a movie">
+		<input type="text" ng-model="query" placeholder="Start typing the name of a movie">
 		<span class="icon-refresh icon-spin thingsAreHappening" ng-show="finder.fetching"></span>
 	</div>
 
 	<ul>
-		<li ng-repeat="result in finder.results | limitTo:10" ng-click="fireCallback(result)">
+		<li ng-repeat="result in data.results | limitTo:10" ng-click="resultClick(result)">
 			{{result.title}} <span class="year">{{result.year}}</span>
 		</li>
 	</ul>
-
-<!-- </div> -->

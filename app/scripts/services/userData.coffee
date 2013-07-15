@@ -23,12 +23,8 @@ angular.module('movieguruApp')
 			faves: []
 			blacklist: []
 			later: []
-			queue: [
-				title: 'some title',
-				year: 1990
-			]
-			currentRec: 
-				title: 'Current rec'
+			queue: []
+			currentRec: {}
 			fetching: false
 
 

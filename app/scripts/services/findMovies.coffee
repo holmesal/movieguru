@@ -14,11 +14,6 @@ angular.module('movieguruApp')
       .success (results) ->
         data.results = results
         data.fetching = false
-        # console.dir res
-        # console.log results
-        # data.results = res
-        # console.log results
-        # results = results
 
     # Public API here
     {
@@ -26,5 +21,5 @@ angular.module('movieguruApp')
         searchMovies query
 
       data: data
-      
+
     }

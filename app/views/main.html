@@ -1,8 +1,8 @@
 <bg-img></bg-img>
 
-<movie-search></movie-search>
+<movie-search movies="movies" add-favorite="addFavorite(fave)"></movie-search>
 
-<recommendation current-rec="movies.currentRec" ng-show="showRecs"></recommendation>
+<recommendation movies="movies"></recommendation>
 
 <div class="row" ng-show="showRecs">
 	<div class="span3">
